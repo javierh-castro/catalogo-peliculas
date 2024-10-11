@@ -2,9 +2,7 @@ package server;
 
 import dominio.Pelicula;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.io.PrintWriter;
+import java.io.*;
 
 public class ServicioPeliculasArchivo implements IServiciosPeliculas{
     private final String NOMBRE_ARCHIVO = "peliculas.txt";
@@ -27,7 +25,22 @@ public class ServicioPeliculasArchivo implements IServiciosPeliculas{
 
     @Override
     public void listarPelicula() {
+        // volveomos abreir el archivo
+        var archivo = new File(NOMBRE_ARCHIVO);
+        try{
+            System.out.println("Listado de Pelicular");
+            //Abrimos el archivo para lectura
+            var entrada = new BufferedReader(new FileReader(archivo));
+            //Leemos linea a linea el archivo
+            String linea;
+            linea = entrada.readLine();
+            //Leemos todas las lineas
+            while (){
 
+            }
+        } catch (Exception e){
+            System.out.println("Ocurio un error a leer el archivo" + e.getMessage());
+        }
     }
 
     @Override
